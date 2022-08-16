@@ -1,4 +1,4 @@
-package com.github.bricklou.launchertuto.game;
+package main.game;
 
 import fr.flowarg.flowupdater.versions.ForgeVersionBuilder;
 import fr.flowarg.flowupdater.versions.VersionType;

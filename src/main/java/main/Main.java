@@ -1,4 +1,4 @@
-package com.github.bricklou.launchertuto;
+package main;
 
 import javafx.application.Application;
 
@@ -12,8 +12,8 @@ public class Main {
         } catch (ClassNotFoundException e) {
             JOptionPane.showMessageDialog(
                     null,
-                    "Erreur:\n" + e.getMessage() + " not found",
-                    "Erreur",
+                    "Error:\n" + e.getMessage() + " not found",
+                    "Error",
                     JOptionPane.ERROR_MESSAGE
             );
         }

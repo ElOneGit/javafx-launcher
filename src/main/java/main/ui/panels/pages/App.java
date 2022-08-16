@@ -1,11 +1,11 @@
-package com.github.bricklou.launchertuto.ui.panels.pages;
+package main.ui.panels.pages;
 
-import com.github.bricklou.launchertuto.Launcher;
-import com.github.bricklou.launchertuto.ui.PanelManager;
-import com.github.bricklou.launchertuto.ui.panel.Panel;
-import com.github.bricklou.launchertuto.ui.panels.pages.content.ContentPanel;
-import com.github.bricklou.launchertuto.ui.panels.pages.content.Home;
-import com.github.bricklou.launchertuto.ui.panels.pages.content.Settings;
+import main.Launcher;
+import main.ui.PanelManager;
+import main.ui.panel.Panel;
+import main.ui.panels.pages.content.ContentPanel;
+import main.ui.panels.pages.content.Home;
+import main.ui.panels.pages.content.Settings;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import fr.theshark34.openlauncherlib.util.Saver;
@@ -81,7 +81,7 @@ public class App extends Panel {
          * Side menu
          */
         // Titre
-        Label title = new Label("JavaFX Launcher");
+        Label title = new Label("AIMC Launcher");
         title.setFont(Font.font("Consolas", FontWeight.BOLD, FontPosture.REGULAR, 30f));
         title.getStyleClass().add("home-title");
         setCenterH(title);
@@ -92,7 +92,7 @@ public class App extends Panel {
         sidemenu.getChildren().add(title);
 
         // Navigation
-        homeBtn = new Button("Accueil");
+        homeBtn = new Button("Casa");
         homeBtn.getStyleClass().add("sidemenu-nav-btn");
         homeBtn.setGraphic(new FontAwesomeIconView(FontAwesomeIcon.HOME));
         setCanTakeAllSize(homeBtn);
@@ -100,7 +100,7 @@ public class App extends Panel {
         homeBtn.setTranslateY(90d);
         homeBtn.setOnMouseClicked(e -> setPage(new Home(), homeBtn));
 
-        settingsBtn = new Button("Paramètres");
+        settingsBtn = new Button("Parametros");
         settingsBtn.getStyleClass().add("sidemenu-nav-btn");
         settingsBtn.setGraphic(new FontAwesomeIconView(FontAwesomeIcon.GEARS));
         setCanTakeAllSize(settingsBtn);

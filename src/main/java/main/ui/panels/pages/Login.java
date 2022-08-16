@@ -1,14 +1,13 @@
-package com.github.bricklou.launchertuto.ui.panels.pages;
+package main.ui.panels.pages;
 
-import com.github.bricklou.launchertuto.Launcher;
-import com.github.bricklou.launchertuto.ui.PanelManager;
-import com.github.bricklou.launchertuto.ui.panel.Panel;
+import main.Launcher;
+import main.ui.PanelManager;
+import main.ui.panel.Panel;
 import fr.litarvan.openauth.AuthPoints;
 import fr.litarvan.openauth.AuthenticationException;
 import fr.litarvan.openauth.Authenticator;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthenticator;
 import fr.litarvan.openauth.model.AuthAgent;
-import fr.litarvan.openauth.model.AuthProfile;
 import fr.litarvan.openauth.model.response.AuthResponse;
 import fr.theshark34.openlauncherlib.minecraft.AuthInfos;
 import fr.theshark34.openlauncherlib.util.Saver;
@@ -37,8 +36,8 @@ public class Login extends Panel {
     PasswordField passwordField = new PasswordField();
     Label userErrorLabel = new Label();
     Label passwordErrorLabel = new Label();
-    Button btnLogin = new Button("Connexion");
-    CheckBox authModeChk = new CheckBox("Mode crack");
+    Button btnLogin = new Button("Conectarse");
+    CheckBox authModeChk = new CheckBox("No Premium");
     Button msLoginBtn = new Button();
 
     @Override
@@ -81,7 +80,7 @@ public class Login extends Panel {
         /*
          * Login sidebar
          */
-        Label title = new Label("JavaFX Launcher");
+        Label title = new Label("AIMC Launcher");
         title.setFont(Font.font("Consolas", FontWeight.BOLD, FontPosture.REGULAR, 30f));
         title.getStyleClass().add("login-title");
         setCenterH(title);
@@ -95,7 +94,7 @@ public class Login extends Panel {
         setCanTakeAllSize(userField);
         setCenterV(userField);
         setCenterH(userField);
-        userField.setPromptText("Adresse E-Mail");
+        userField.setPromptText("E-Mail");
         userField.setMaxWidth(300);
         userField.setTranslateY(-70d);
         userField.getStyleClass().add("login-input");
@@ -114,7 +113,7 @@ public class Login extends Panel {
         setCanTakeAllSize(passwordField);
         setCenterV(passwordField);
         setCenterH(passwordField);
-        passwordField.setPromptText("Mot de passe");
+        passwordField.setPromptText("Contraseña");
         passwordField.setMaxWidth(300);
         passwordField.setTranslateY(-15d);
         passwordField.getStyleClass().add("login-input");
@@ -149,10 +148,10 @@ public class Login extends Panel {
             offlineAuth.set(newValue);
             passwordField.setDisable(newValue);
             if (newValue) {
-                userField.setPromptText("Pseudo");
+                userField.setPromptText("Username");
                 passwordField.clear();
             } else {
-                userField.setPromptText("Adresse E-Mail");
+                userField.setPromptText("E-Mail");
             }
 
             btnLogin.setDisable(!(userField.getText().length() > 0 && (offlineAuth.get() || passwordField.getText().length() > 0)));
@@ -167,7 +166,7 @@ public class Login extends Panel {
         separator.setTranslateY(110d);
 
         // Login with label
-        Label loginWithLabel = new Label("Ou se connecter avec:".toUpperCase());
+        Label loginWithLabel = new Label("O Registrarse con Microsoft:".toUpperCase());
         setCanTakeAllSize(loginWithLabel);
         setCenterV(loginWithLabel);
         setCenterH(loginWithLabel);
@@ -196,7 +195,7 @@ public class Login extends Panel {
         if (offlineAuth.get() && textField == passwordField) return;
 
         if (textField.getText().length() == 0) {
-            errorLabel.setText("Le champ ne peut être vide");
+            errorLabel.setText("Rellenar el campo");
         } else {
             errorLabel.setText("");
         }
@@ -224,7 +223,7 @@ public class Login extends Panel {
 
                 Launcher.getInstance().setAuthInfos(infos);
 
-                this.logger.info("Hello " + infos.getUsername());
+                this.logger.info("Hola " + infos.getUsername());
 
                 panelManager.showPanel(new App());
             } catch (AuthenticationException e) {

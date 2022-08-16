@@ -1,6 +1,6 @@
-package com.github.bricklou.launchertuto.ui.panel;
+package main.ui.panel;
 
-import com.github.bricklou.launchertuto.ui.PanelManager;
+import main.ui.PanelManager;
 import javafx.scene.layout.GridPane;
 
 public interface IPanel {

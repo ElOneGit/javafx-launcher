@@ -1,8 +1,8 @@
-package com.github.bricklou.launchertuto.ui.panels.pages.content;
+package main.ui.panels.pages.content;
 
-import com.github.bricklou.launchertuto.Launcher;
-import com.github.bricklou.launchertuto.game.MinecraftInfos;
-import com.github.bricklou.launchertuto.ui.PanelManager;
+import main.Launcher;
+import main.game.MinecraftInfos;
+import main.ui.PanelManager;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import fr.flowarg.flowupdater.FlowUpdater;
@@ -85,7 +85,7 @@ public class Home extends ContentPanel {
 
     private void showPlayButton() {
         boxPane.getChildren().clear();
-        Button playBtn = new Button("Jouer");
+        Button playBtn = new Button("Jugar");
         FontAwesomeIconView playIcon = new FontAwesomeIconView(FontAwesomeIcon.GAMEPAD);
         playIcon.getStyleClass().add("play-icon");
         setCanTakeAllSize(playBtn);
@@ -120,7 +120,7 @@ public class Home extends ContentPanel {
                 });
             }
 
-            @Override
+
             public void update(long downloaded, long max) {
                 Platform.runLater(() -> {
                     percentTxt = decimalFormat.format(downloaded * 100.d / max) + "%";

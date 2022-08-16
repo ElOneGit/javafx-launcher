@@ -1,4 +1,4 @@
-package com.github.bricklou.launchertuto.ui.panel;
+package main.ui.panel;
 
 import javafx.scene.Node;
 import javafx.scene.layout.GridPane;

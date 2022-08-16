@@ -1,6 +1,6 @@
-package com.github.bricklou.launchertuto.ui.panels.pages.content;
+package main.ui.panels.pages.content;
 
-import com.github.bricklou.launchertuto.ui.panel.Panel;
+import main.ui.panel.Panel;
 import javafx.animation.FadeTransition;
 import javafx.util.Duration;
 
